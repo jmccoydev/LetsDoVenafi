@@ -1,6 +1,6 @@
 provider "venafi" {
     url          = "https://tpp.venafi.example"
-    trust_bundle = "${file("/opt/venafi/bundle.pem")}"
+    trust_bundle = var.pkibundle
     access_token = "p0WTt3sDPbzm2BDIkoJROQ=="
     zone         = "DevOps\\Terraform"
 }
