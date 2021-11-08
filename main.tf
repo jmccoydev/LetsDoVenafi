@@ -1,4 +1,5 @@
 provider "venafi" {
+    api_key = var.venafi_api
 }
 
 resource "venafi_certificate" "webserver" {
