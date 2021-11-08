@@ -1,5 +1,6 @@
 provider "venafi" {
     api_key = var.api_key
+    zone    = var.zone
 }
 
 resource "venafi_certificate" "webserver" {
