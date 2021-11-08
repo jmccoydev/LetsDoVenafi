@@ -1,5 +1,5 @@
 provider "venafi" {
-    url          = "https://tpp.venafidemo.com"
+    url          = "https://uvo1yjukjquyf5nqj8p.vm.cld.sr"
     trust_bundle = var.pkibundle
     access_token = "lZpSgA7CX9QUStK+KHW72g=="
     zone         = "DevOps\\Terraform"
