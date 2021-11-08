@@ -13,19 +13,9 @@ resource "venafi_certificate" "webserver" {
     ]
     algorithm = "RSA"
     rsa_bits = "2048"
-    key_password = "${var.pk_pass}"
+    key_password = "123456"
     custom_fields = {
         "Cost Center" = "AB1234",
         "Environment" = "UAT|Staging"
     }
-}
-
-resource "venafi_ssh_certificate" "ssh_cert" {
-    key_id = "my-first-ssh-certificate"
-    template = "Sample SSH CA"
-    public_key_method = "local"
-    key_passphrase = "passw0rd"
-    key_size = 3072
-    principal = [ "seamus" ]
-    valid_hours = 24
 }
