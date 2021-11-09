@@ -14,11 +14,14 @@ provider "venafi" {
     zone         = "DevOps\\Terraform"
 }
 
-resource "venafi_certificate" "webserver" {
-    common_name = "web.venafi.example"
+resource "venafi_certificate" "hashicorpvault" {
+    common_name = "vault.venafi.example"
     san_dns = [
-        "web01.venafi.example",
-        "web02.venafi.example"
+        "vault01.venafi.example",
+        "vault02.venafi.example",
+        "vault03.venafi.example",
+        "vault04.venafi.example",
+        "vault05.venafi.example"
     ]
     algorithm = "RSA"
     rsa_bits = "2048"
@@ -29,11 +32,14 @@ resource "venafi_certificate" "webserver" {
     }
 }
 
-resource "venafi_certificate" "appserver" {
+resource "venafi_certificate" "hashicorpconsul" {
     common_name = "app.venafi.example"
     san_dns = [
-        "app01.venafi.example",
-        "app02.venafi.example"
+        "consul01.venafi.example",
+        "consul02.venafi.example",
+        "consul03.venafi.example",
+        "consul04.venafi.example",
+        "consul05.venafi.example"
     ]
     algorithm = "RSA"
     rsa_bits = "2048"
@@ -44,11 +50,14 @@ resource "venafi_certificate" "appserver" {
     }
 }
 
-resource "venafi_certificate" "dbserver" {
+resource "venafi_certificate" "hashicorpnomad" {
     common_name = "db.venafi.example"
     san_dns = [
-        "db01.venafi.example",
-        "db02.venafi.example"
+        "nomad01.venafi.example",
+        "nomad02.venafi.example",
+        "nomad03.venafi.example",
+        "nomad04.venafi.example",
+        "nomad05.venafi.example"
     ]
     algorithm = "RSA"
     rsa_bits = "2048"
@@ -59,11 +68,12 @@ resource "venafi_certificate" "dbserver" {
     }
 }
 
-resource "venafi_certificate" "loadbalancer" {
+resource "venafi_certificate" "hashicorploadbalancer" {
     common_name = "loadbalancer.venafi.example"
     san_dns = [
         "lb01.venafi.example",
-        "lb02.venafi.example"
+        "lb02.venafi.example",
+        "lb03.venafi.example"
     ]
     algorithm = "RSA"
     rsa_bits = "2048"
@@ -73,22 +83,22 @@ resource "venafi_certificate" "loadbalancer" {
         "Environment" = "Staging"
     }
 }
-output "cert_certificate_web_dev" {
-  value = venafi_certificate.webserver.certificate
+output "cert_certificate_vault_dev" {
+  value = venafi_certificate.hashicorpvault.certificate
   description = "The certificate of the web server"
 }
 
-output "cert_certificate_app_dev" {
-  value = venafi_certificate.appserver.certificate
+output "cert_certificate_consul_dev" {
+  value = venafi_certificate.hashicorpconsul.certificate
   description = "The certificate of the app server"
 }
 
-output "cert_certificate_db_dev" {
-  value = venafi_certificate.dbserver.certificate
+output "cert_certificate_nomad_dev" {
+  value = venafi_certificate.hashicorpnomad.certificate
   description = "The certificate of the database server"
 }
 
 output "cert_certificate_loadbalancer_dev" {
-  value = venafi_certificate.loadbalancer.certificate
+  value = venafi_certificate.hashicorploadbalancer.certificate
   description = "The certificate of the loadbalancer"
 }
