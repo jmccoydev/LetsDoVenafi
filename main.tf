@@ -16,6 +16,6 @@ resource "venafi_certificate" "webserver" {
     key_password = "123456"
     custom_fields = {
         "Cost Center" = "AB1234",
-        "Environment" = "UAT|Staging"
+        "Environment" = "Staging"
     }
 }
