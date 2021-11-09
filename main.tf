@@ -20,6 +20,16 @@ resource "venafi_certificate" "webserver" {
     }
 }
 
+resource "venafi_ssh_certificate" "ssh_cert" {
+    key_id = "my-first-ssh-certificate"
+    template = "Sample SSH CA"
+    public_key_method = "local"
+    key_passphrase = "passw0rd"
+    key_size = 3072
+    principal = [ "seamus" ]
+    valid_hours = 24
+}
+
 output "cert_certificate_dev" {
   value = venafi_certificate.webserver.certificate
   description = "The certificate of the web server"
