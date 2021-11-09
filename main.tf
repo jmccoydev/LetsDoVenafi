@@ -1,7 +1,7 @@
 provider "venafi" {
     url          = "https://uvo1yjukjquyf5nqj8p.env.cloudshare.com/"
     trust_bundle = var.trust
-    access_token = var.acess_token
+    access_token = var.access_token
     zone         = "DevOps\\Terraform"
 }
 
