@@ -1,6 +1,6 @@
-variable "api_key" {
-    description = "api_key"
+variable "trust" {
+    description = "trust bundle"
 }
-variable "zone" {
-    description = "zone"
+variable "access_token" {
+    description = "access_token"
 }
