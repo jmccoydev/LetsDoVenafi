@@ -1,6 +1,8 @@
 provider "venafi" {
-    api_key = var.api_key
-    zone    = var.zone
+    url          = "https://uvo1yjukjquyf5nqj8p.env.cloudshare.com/"
+    trust_bundle = var.trust
+    access_token = var.acess_token
+    zone         = "DevOps\\Terraform"
 }
 
 resource "venafi_certificate" "webserver" {
