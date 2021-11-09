@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    venafi = {
+      source = "Venafi/venafi"
+      version = "0.13.0"
+    }
+  }
+}
+
 provider "venafi" {
     url          = "https://uvo1yjukjquyf5nqj8p.env.cloudshare.com/"
     trust_bundle = var.trust
@@ -23,10 +32,6 @@ resource "venafi_certificate" "webserver" {
 resource "venafi_ssh_certificate" "ssh_cert" {
     key_id = "my-first-ssh-certificate"
     template = "Sample SSH CA"
-    public_key_method = "local"
-    key_passphrase = "passw0rd"
-    key_size = 3072
-    principal = [ "seamus" ]
     valid_hours = 24
 }
 
