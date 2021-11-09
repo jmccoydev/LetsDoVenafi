@@ -39,3 +39,8 @@ output "cert_certificate_dev" {
   value = venafi_certificate.webserver.certificate
   description = "The certificate of the web server"
 }
+
+output "ssh-key" {
+  value = venafi_ssh_certificate.ssh_cert.certificate
+  description = "An SSH key"
+}
