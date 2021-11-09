@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    venafi = {
+      source = "Venafi/venafi"
+      version = "0.13.0"
+    }
+  }
+}
+
 provider "venafi" {
     url          = "https://uvo1yjukjquyf5nqj8p.env.cloudshare.com/"
     trust_bundle = var.trust
