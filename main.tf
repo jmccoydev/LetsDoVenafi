@@ -30,8 +30,8 @@ resource "venafi_certificate" "webserver" {
 }
 
 resource "venafi_ssh_certificate" "ssh_cert" {
-    key_id = "my-first-ssh-certificate"
-    template = "Sample SSH CA"
+    key_id = "sshcertificate"
+    template = "SampleSSHCA"
     valid_hours = 24
 }
 
