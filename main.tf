@@ -15,7 +15,7 @@ provider "venafi" {
 }
 
 resource "venafi_certificate" "hashicorpvault" {
-    common_name = "vault.venafi.example"
+    common_name = "hashicorpvault.venafi.example"
     san_dns = [
         "vault01.venafi.example",
         "vault02.venafi.example",
@@ -33,7 +33,7 @@ resource "venafi_certificate" "hashicorpvault" {
 }
 
 resource "venafi_certificate" "hashicorpconsul" {
-    common_name = "app.venafi.example"
+    common_name = "hashicorpconsul.venafi.example"
     san_dns = [
         "consul01.venafi.example",
         "consul02.venafi.example",
@@ -51,7 +51,7 @@ resource "venafi_certificate" "hashicorpconsul" {
 }
 
 resource "venafi_certificate" "hashicorpnomad" {
-    common_name = "db.venafi.example"
+    common_name = "hashicorpnomad.venafi.example"
     san_dns = [
         "nomad01.venafi.example",
         "nomad02.venafi.example",
@@ -69,7 +69,7 @@ resource "venafi_certificate" "hashicorpnomad" {
 }
 
 resource "venafi_certificate" "hashicorploadbalancer" {
-    common_name = "loadbalancer.venafi.example"
+    common_name = "hashicorploadbalancer.venafi.example"
     san_dns = [
         "lb01.venafi.example",
         "lb02.venafi.example",
