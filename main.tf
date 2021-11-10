@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "venafi" {
-    api_key = var.VAAS_API_KEY
+    api_key = var.VENAFI_API_KEY
     zone    = "Nomad\\custom-api"
 }
 
