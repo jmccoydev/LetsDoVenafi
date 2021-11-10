@@ -8,8 +8,8 @@ terraform {
 }
 
 provider "venafi" {
-    api_key = "79f2f52b-84c1-4aaa-9842-18ba2d54508c"
-    zone    = "devworks\\custom-api"
+    api_key = "var.VAAS_API_KEY"
+    zone    = "Nomad\\custom-api"
 }
 
 resource "venafi_certificate" "hashicorpvault" {
